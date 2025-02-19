@@ -28,9 +28,17 @@ public class MovieHOF {
         return countMovies(movies, m -> m.year() == 1975);
     }
 
+    // Denna returnerar endast cast från EN film med högst rating, gjort annorlunda i MovieFunctions fyi
     public static List<String> castOfHighestRatedMovieHOF(List<Movie> movies) {
         return findMax(movies, Comparator.comparingDouble(Movie::imdbRating))
                 .map(Movie::cast)
                 .orElse(List.of());
     }
+
+    public static int longestMovieRuntimeHOF(List<Movie> movies) {
+        return findMax(movies, Comparator.comparingInt(Movie::runtime))
+                .map(Movie::runtime)
+                .orElse(0);
+    }
+
 }

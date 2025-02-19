@@ -78,7 +78,6 @@ public class MovieFunctionsTest {
             )
     );
 
-
     @Test
     public void testCountMoviesFrom1975() {
         long result = MovieFunctions.countMoviesFrom1975(sampleMovies);

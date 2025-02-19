@@ -73,10 +73,13 @@ public class MongoDBConnector {
             // Använder hof funk istället för att visa att dom fungerar, visas ju i test också dock
 
             System.out.println("\nMovieHOF - filmer från 1975: " +
-            MovieHOF.countMoviesFrom1975HOF(movieList));
+            MovieHOF.countMoviesFrom1975HOF(movieList) + " st");
 
             System.out.println("MovieHOF - skådisar i högsta ratade filmen: " +
                     MovieHOF.castOfHighestRatedMovieHOF(movieList));
+
+            System.out.println("MovieHOF - längsta runtime: "
+            + MovieHOF.longestMovieRuntimeHOF(movieList) + " min");
 
 
         } catch (Exception e) {
