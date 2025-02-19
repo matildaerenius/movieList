@@ -52,14 +52,6 @@ public class MovieFunctions {
     }
 
     public static long actorsInMoreThanOneMovie(List<Movie> movies) {
-//        return movies.stream()
-//                .flatMap(x -> x.cast().stream())
-//                .distinct()
-//                .filter(actor -> movies.stream()
-//                        .filter(film -> film.cast().contains(actor))
-//                        .count() > 1)
-//                .count();
-
         Map<String, Long> actorCount = countMap(movies);
         return actorCount.values().stream()
                 .filter(count -> count > 1)
@@ -67,15 +59,6 @@ public class MovieFunctions {
     }
 
     public static String mostFeaturedActor(List<Movie> movies) {
-//        return movies.stream()
-//                .flatMap(x -> x.cast().stream())
-//                .distinct()
-//                .max(Comparator.comparingLong(actor ->
-//                        movies.stream()
-//                                .filter(y -> y.cast().contains(actor))
-//                                .count()))
-//                .orElse("No movie found :(");
-
 
 //        Map<String, Long> actorCount = countMap(movies);
 //        return actorCount.keySet().stream()
@@ -97,7 +80,6 @@ public class MovieFunctions {
                 .collect(Collectors.toList());
 
         return String.join(", ", mostFeaturedActors);
-
     }
 
     // Brutit ut nedan kodsnutt till en egen metod så kod inte blir duplicerad
@@ -120,5 +102,4 @@ public class MovieFunctions {
                 .distinct()
                 .count() < movies.size();
     }
-
 }
